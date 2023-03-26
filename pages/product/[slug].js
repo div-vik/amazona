@@ -60,7 +60,7 @@ const ProductScreen = () => {
           <div className="card p-5">
             <div className="mb-2 flex justify-between">
               <div>Price</div>
-              <div>Rs. {product.price * 82.35}</div>
+              <div>Rs. {product.price * 82}</div>
             </div>
             <div className="mb-2 flex justify-between">
               <div>Status</div>
