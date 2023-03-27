@@ -10,9 +10,9 @@ const Layout = ({ title, children }) => {
   const { status, data: session } = useSession();
   const { state } = useContext(Store);
   const { cart } = state;
-  const [cartItems, setCartItems] = useState(0);
+  const [cartItemsCount, setCartItemsCount] = useState(0);
   useEffect(() => {
-    setCartItems(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
+    setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
   }, [cart.cartItems]);
   return (
     <>
@@ -33,9 +33,9 @@ const Layout = ({ title, children }) => {
             <div>
               <Link className="p-2" href="/cart">
                 Cart
-                {cartItems && (
+                {cartItemsCount > 0 && (
                   <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
-                    {cartItems}
+                    {cartItemsCount}
                   </span>
                 )}
               </Link>
